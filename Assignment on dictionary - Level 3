@@ -1,0 +1,29 @@
+#lex_auth_012693816757551104165
+
+def max_visited_speciality(patient_medical_speciality_list,medical_speciality):
+    # write your logic here
+    count1 = 0
+    count2 = 0
+    count3 = 0
+
+    for i in patient_medical_speciality_list:
+        if(patient_medical_speciality_list.index(i) %2 != 0):
+            if(i == "P"):
+                count1 += 1
+            elif(i == "O"):
+                count2 += 1
+            else:
+                count3 += 1
+        if(count1 > count2 and count1 > count3):
+            speciality = medical_speciality["P"]
+        elif(count2 > count1 and count2 > count1):
+            speciality = medical_speciality["O"]
+        elif(count3 > count2 and count3 > count1):
+            speciality = medical_speciality["E"]
+    return speciality
+
+#provide different values in the list and test your program
+patient_medical_speciality_list = [102, 'E', 302, 'P', 305, 'E', 401, 'O', 656, 'E', 987, 'O']
+medical_speciality={"P":"Pediatrics","O":"Orthopedics","E":"ENT"}
+speciality=max_visited_speciality(patient_medical_speciality_list,medical_speciality)
+print(speciality)
