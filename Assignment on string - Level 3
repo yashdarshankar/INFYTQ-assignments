@@ -1,0 +1,28 @@
+#lex_auth_01269444961482342489
+
+def sms_encoding(data):
+    vowel = ""
+    msg = ""
+    s = ""
+    a = data.split(" ")
+    for i in a:
+        consonent = ""
+        count =1
+        if(len(i) == 1):
+            s += i+" "
+        else:
+            for j in i:
+                if(j == "a" or j == "e" or j == "i" or j == "o" or j == "u" or j == "A" or j == "E" or j == "I" or j == "O" or j == "U" ):
+                    vowel = j
+                else:
+                    consonent += j 
+            s += consonent + " "
+        
+    if(s[len(s)-1] == " "):
+        for i in range(len(s)-1):
+            msg += s[i]
+    return msg
+    #start writing your code here
+
+data="I love Python"
+print(sms_encoding(data))
