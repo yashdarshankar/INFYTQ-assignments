@@ -1,0 +1,30 @@
+#lex_auth_01269444195664691284
+
+def encrypt_sentence(sentence):
+    #start writing your code here
+    stn = ""
+    msg = ""
+    a = sentence.split(" ")
+
+    for i in a:
+        if((a.index(i)+1) %2 != 0):
+            for j in range(len(i)-1,-1,-1):
+                stn += i[j]
+            stn += " "
+        else:
+            vowel = ""
+            consonent = ""
+            for j in i:
+                if(j == "a" or j == "e" or j == "i" or j == "o" or j == "u"):
+                    vowel += j
+                else:
+                    consonent += j
+            stn += consonent + vowel+" "
+    for i in range(len(stn)-1):
+        msg += stn[i]
+        
+
+    return msg
+sentence="The sun rises in the east"
+encrypted_sentence=encrypt_sentence(sentence)
+print(encrypted_sentence)
