@@ -1,0 +1,26 @@
+#lex_auth_012693825794351104168
+
+def find_common_characters(msg1,msg2):
+    msg = ""
+    stn = ""
+    list1 = []
+    for i in msg1:
+        for j in msg2:
+            if(i == j and i != " "):
+                msg += i
+            
+    for i in msg:
+        if i not in list1:
+            list1.append(i)
+    for i in range(len(list1)):
+        stn += str(list1[i])
+    if(msg == ""):
+        stn = -1
+    return stn
+     #Remove pass and write your logic here
+
+#Provide different values for msg1,msg2 and test your program
+msg1="I like Python"
+msg2="Java is a very popular language"
+common_characters=find_common_characters(msg1,msg2)
+print(common_characters)
